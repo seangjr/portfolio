@@ -41,13 +41,13 @@ export default function App({ Component, pageProps }: AppProps) {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content="@spaysheeps" />
                 <meta name="twitter:creator" content="@spaysheeps" />
-                <meta name="twitter:image" content="/card.jpeg" />
+                <meta name="twitter:image" content="/git-preview.png" />
                 <meta
                     property="og:site_name"
                     content="Sean's portfolio website!"
                 />
                 <meta property="og:type" content="website" />
-                <meta property="og:image" content="/card.jpeg" />
+                <meta property="og:image" content="/git-preview.png" />
                 <link rel="manifest" href="/manifest.json" />
                 <link rel="apple-touch-icon" href="/favicon.png" />
             </Head>
