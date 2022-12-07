@@ -1,0 +1,53 @@
+@use "../../foundation/global";
+
+// Component セクション見出し
+//--------------------------------------------------------------------------
+
+.c-section-heading {
+    position: relative;
+    padding-top: 40px;
+
+    @include global.mq(xl) {
+        padding-top: 0;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: global.$color-primary;
+
+        @include global.mq(xl) {
+            top: 35%;
+            left: auto;
+            right: 0;
+            width: 75vw;
+        }
+    }
+}
+
+.c-section-heading__en {
+    display: block;
+    font-size: max(34px, 4vw);
+    @include global.lh(1);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+
+    @include global.mq(lax) {
+        max-width: 17%;
+        font-size: max(40px, #{global.vw(60)});
+    }
+}
+
+.c-section-heading__ja {
+    display: block;
+    margin-top: 8px;
+    @include global.fz(14, 16);
+    @include global.lh(1);
+    font-weight: 400;
+    font-family: global.$font-family-ja;
+}
