@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useRef } from "react";
@@ -20,7 +20,6 @@ const SingleWorkItem = ({ details }: Props) => {
             <Head>
                 <title>{details.workdetails.title} | Sean Relampagos</title>
             </Head>
-
             <main
                 className="l-single-works p-single-works"
                 data-bg={details.workdetails.dataBg}
@@ -293,22 +292,7 @@ const SingleWorkItem = ({ details }: Props) => {
 
 export default SingleWorkItem;
 
-export const getStaticPaths: GetStaticPaths = async () => {
-    const res = await fetch("http://admin.seangjr.me/api/details");
-    const { docs } = await res.json();
-    const paths = docs.map((doc: { workdetails: { slug: any } }) => {
-        return {
-            params: { slug: doc.workdetails.slug.toString() },
-        };
-    });
-
-    return {
-        paths,
-        fallback: false,
-    };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     const res = await fetch("http://admin.seangjr.me/api/details");
     const { docs } = await res.json();
     const details = docs.find((doc: { workdetails: { slug: any } }) => {

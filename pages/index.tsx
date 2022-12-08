@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 
 import type { Work } from "../components/types";
@@ -143,7 +143,7 @@ export default function Home({ works }: Props) {
     );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
     const res = await fetch("https://admin.seangjr.me/api/works");
     const { docs } = await res.json();
     const works: Work[] = docs;
