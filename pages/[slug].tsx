@@ -18,7 +18,9 @@ const SingleWorkItem = ({ details }: Props) => {
     return (
         <>
             <Head>
-                <title>{details.workdetails.title} | Sean Relampagos</title>
+                <title key={details.workdetails.classId}>
+                    {details.workdetails.title} | Sean Relampagos
+                </title>
             </Head>
             <main
                 className="l-single-works p-single-works"
@@ -298,7 +300,11 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     const details = docs.find((doc: { workdetails: { slug: any } }) => {
         return doc.workdetails.slug == params?.slug;
     });
-    console.log(details);
+    if (!details) {
+        return {
+            notFound: true,
+        };
+    }
     return {
         props: {
             details,

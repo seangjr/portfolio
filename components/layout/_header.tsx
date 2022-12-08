@@ -4,11 +4,10 @@ import { AiFillInstagram } from "react-icons/ai";
 import Link from "next/link";
 import useDrawer, { removeEvent, toggleDrawer } from "../hooks/useDrawer";
 
-export function addBlendHeader(header: RefObject<HTMLDivElement>) {
-    if (header.current) {
-        if (header.current.classList.contains("is-blend-normal")) {
-            header.current.classList.remove("is-blend-normal");
-        }
+export function addBlendHeader() {
+    const header = document.getElementById("js-header");
+    if (header?.classList.contains("is-blend-normal")) {
+        header?.classList.remove("is-blend-normal");
     }
 }
 
