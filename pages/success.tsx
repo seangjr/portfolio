@@ -14,11 +14,9 @@ const Success = () => {
                     <div id="js-first-view" className="p-contact__thanks-fv">
                         <h1 className="c-page-heading">
                             <span className="c-page-heading__en c-page-heading__en--contact is-wrap">
-                                <span className="is-slide-up">Thank you</span>
-                            </span>
-                            <span className="c-page-heading__en c-page-heading__en--contact is-wrap u-hidden-md-down">
-                                <span className="is-slide-up u-delay01">
-                                    for your inquiry.
+                                <span className="is-slide-up">
+                                    Thank you <br />
+                                    &nbsp;&nbsp;for your inquiry.
                                 </span>
                             </span>
                         </h1>
@@ -75,12 +73,11 @@ const Success = () => {
                                 <p className="p-contact-thanks__text js-slide-up-row">
                                     Thank you!
                                     <br />
-                                    I will reply as soon as possible after
-                                    checking and verifying the contents of your
-                                    inquiry.
+                                    I have received your inquiry. I will reply
+                                    to you as soon as possible.
                                     <br />
                                     If I do not reply within 3 days, please
-                                    contact me again.
+                                    contact me again via email.
                                 </p>
                             </div>
                         </section>

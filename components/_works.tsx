@@ -60,11 +60,9 @@ export const WorkImage = ({ work }: Props) => {
             key={work.dataId}
         >
             <picture className="p-works-item__picture">
-                <Image
+                <img
                     src={work.thumbnail.url}
                     alt={work.title}
-                    width={770}
-                    height={781}
                     loading="lazy"
                     data-scroll
                     data-scroll-speed="-1.1"

@@ -109,12 +109,12 @@ const Contact = () => {
                                         <ul className="p-contact-details__list">
                                             <li className="p-contact-details__item is-wrap">
                                                 <span className="p-contact-details__text is-slide-up u-delay09">
-                                                    Singapore
+                                                    Singapore, Singapore
                                                 </span>
                                             </li>
                                             <li className="p-contact-details__item is-wrap">
                                                 <span className="p-contact-details__text is-slide-up u-delay010">
-                                                    KL, Malaysia
+                                                    Kuala Lumpur, Malaysia
                                                 </span>
                                             </li>
                                         </ul>
@@ -167,7 +167,7 @@ const Contact = () => {
                                             </li>
                                             <li className="p-contact-details__item is-wrap">
                                                 <a
-                                                    href="https://github.com/szeanx"
+                                                    href="https://github.com/seangjr"
                                                     className="p-contact-details__link is-slide-up u-delay011"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
@@ -183,7 +183,7 @@ const Contact = () => {
                             <form
                                 id="js-form"
                                 className="p-contact__form p-form is-slide-up"
-                                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdfPfVBFlFCYrZUmh2aLr9N4a6BsFjPPhRLm3Jm48BiO4lRFw/formResponse"
+                                action="https://formspree.io/f/mbjvrgok"
                                 onSubmit={(): string =>
                                     (window.location.href = "/success")
                                 }
@@ -206,7 +206,7 @@ const Contact = () => {
                                             id="your-name"
                                             type="text"
                                             placeholder="e.g. Benson Wong"
-                                            name="entry.43688436"
+                                            name="name"
                                             autoComplete="name"
                                             required
                                             aria-required="true"
@@ -227,8 +227,8 @@ const Contact = () => {
                                             className="p-form__input"
                                             id="your-company"
                                             type="text"
-                                            name="entry.1963592809"
-                                            placeholder="e.g. Benedict Inc."
+                                            name="company"
+                                            placeholder="e.g. Company ABC"
                                             autoComplete="organization"
                                         />
                                     </p>
@@ -249,7 +249,7 @@ const Contact = () => {
                                             type="email"
                                             placeholder="e.g. juicewrld35@gmail.com"
                                             js-name="YPqjbf"
-                                            name="entry.125218350"
+                                            name="email"
                                             autoComplete="email"
                                             required
                                             aria-required="true"
@@ -270,7 +270,7 @@ const Contact = () => {
                                             className="p-form__input p-form__textarea maxlength"
                                             id="your-textarea"
                                             placeholder="Tell me about your project!"
-                                            name="entry.19496521"
+                                            name="message"
                                             required
                                             aria-required="true"
                                         ></textarea>

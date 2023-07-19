@@ -1,0 +1,126 @@
+{
+    "works": [
+        {
+            "dataId": "#emman-ng-photography",
+            "id": "emman-ng-photography",
+            "title": "Emmanuel Ng",
+            "description": "A photography portfolio website for a freelance photographer Emmanuel Ng.",
+            "classId": "emman-ng-photography",
+            "slug": "emman-ng-photography",
+            "scope": "Frontend Development",
+            "category": "Photography Portfolio",
+            "dataBg": "#000000",
+            "thumbnail": {
+                "url": "/works/emman-ng-photography/emmanng.jpg"
+            }
+        },
+        {
+            "dataId": "#whatsapp",
+            "id": "whatsapp",
+            "title": "Whatsapp Web",
+            "description": "A Whatsapp Web Clone made with React and Firebase Google Authentication and Cloud Firestore to store messages.",
+            "classId": "whatsapp",
+            "slug": "whatsapp",
+            "scope": "Web Development",
+            "category": "Live Chatting App",
+            "dataBg": "#075E54",
+            "thumbnail": {
+                "url": "/works/whatsapp/whatsapp.jpg"
+            },
+            "details": {
+                "siteUrl": "https://whatsapp.seangjr.me/",
+                "source": "https://github.com/seangjr/whatsupp/",
+                "overview": "A Whatsapp Web Clone made with React and Firebase. It uses Google Authentication and Firestore for the database.",
+                "mockupImageSp": {
+                    "url": "/works/whatsapp/whatsapp.jpg"
+                },
+                "mockupImagePc": {
+                    "url": "/works/whatsapp/whatsapp.jpg"
+                },
+                "mockupImageTab": {
+                    "url": "/works/whatsapp/whatsapp.jpg"
+                },
+                "projectImageWide": {
+                    "url": "/works/whatsapp/whatsapp.jpg"
+                },
+                "projectDetailsImage": {
+                    "url": "/works/whatsapp/whatsapp.jpg"
+                },
+                "role": "Personal Project",
+                "productionDate": "2021",
+                "productionDuration": "1 week",
+                "languages": "HTML, CSS, React JavaScript",
+                "tools": "vscode, GitHub, Figma"
+            }
+        },
+        {
+            "dataId": "#spotify-web-player",
+            "id": "spotify-web-player",
+            "title": "Spotify Web Player",
+            "description": "A Spotify Web Player made with React and Spotify Web API.",
+            "classId": "spotify-web-player",
+            "slug": "spotify-web-player",
+            "scope": "Web Development",
+            "category": "Music Player",
+            "dataBg": "#1DB954",
+            "thumbnail": {
+                "url": "/works/spotify-web-player/spotify.png"
+            },
+            "details": {
+                "siteUrl": "https://spotify.seangjr.me/",
+                "source": "https://github.com/seangjr/spotify-web",
+                "overview": "A Spotify web Player made with React and Spotify Web API. It requires a daemon/instance of Spotify running on the machine to work. It uses Spotify Web API to fetch the current playing song and display it on the web player. It can also control the playback of the current song, and set songs. Login with Spotify and try it out!",
+                "mockupImageSp": {
+                    "url": "/works/spotify-web-player/spotify.jpg"
+                },
+                "mockupImagePc": {
+                    "url": "/works/spotify-web-player/spotify.jpg"
+                },
+                "mockupImageTab": {
+                    "url": "/works/spotify-web-player/spotify.jpg"
+                },
+                "projectImageWide": {
+                    "url": "/works/spotify-web-player/spotify.jpg"
+                },
+                "projectDetailsImage": {
+                    "url": "/works/spotify-web-player/spotify.jpg"
+                },
+                "role": "Personal Project",
+                "productionDate": "2021",
+                "productionDuration": "2 weeks",
+                "languages": "Tailwind CSS, React JavaScript",
+                "tools": "vscode, GitHub"
+            }
+
+        },
+        {
+            "dataId": "#xian-bird-nest",
+            "id": "xian-bird-nest",
+            "title": "Xian Bird Nest",
+            "description": "Online bird nest shopping platform for Xian Bird Nest. Built with Next.js and Laravel for the backend.",
+            "classId": "xian-bird-nest",
+            "slug": "xian-bird-nest",
+            "scope": "Frontend Development",
+            "category": "E-commerce",
+            "dataBg": "#781212",
+            "thumbnail": {
+                "url": "/works/xian-bird-nest/xianbirdnest.jpg"
+            }
+        },
+        {
+            "dataId": "#thoth",
+            "id": "thoth",
+            "title": "Thoth",
+            "description": "A web forum for students and knowledge sharing. Built with React and Express.js",
+            "classId": "thoth",
+            "slug": "thoth",
+            "scope": "Fullstack Development",
+            "category": "Web Forum",
+            "dataBg": "#1E1E1E",
+            "thumbnail": {
+                "url": "/works/thoth/thoth.png"
+            }
+
+        }
+    ]
+}

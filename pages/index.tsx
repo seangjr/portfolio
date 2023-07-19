@@ -1,14 +1,10 @@
-import { GetServerSideProps } from "next";
 import Head from "next/head";
 
-import type { Work } from "../components/types";
 import { WorkDetails, WorkImage } from "../components/_works";
+import type { Work } from "../components/types";
+import { works } from "../components/data/works.json";
 
-interface Props {
-    works: Work[];
-}
-
-export default function Home({ works }: Props) {
+export default function Home() {
     return (
         <>
             <Head>
@@ -26,13 +22,11 @@ export default function Home({ works }: Props) {
                                 style={{ transform: "translate(0px, 0px)" }}
                             >
                                 <span className="is-wrap">
-                                    <span className="is-slide-up">
-                                        SEANGJR.
-                                    </span>
+                                    <span className="is-slide-up">SEAN</span>
                                 </span>
                                 <span className="is-wrap">
                                     <span className="is-slide-up u-delay01">
-                                        PORTFOLIO
+                                        RELAMPAGOS
                                         <span className="u-hidden-md-down"></span>
                                     </span>
                                 </span>
@@ -42,16 +36,10 @@ export default function Home({ works }: Props) {
                                 style={{ transform: "translate(0px, 0px)" }}
                             >
                                 <p className="p-first-view__text is-slide-up u-delay04">
-                                    Software Engineer based in Singapore.
+                                    Software Engineer based in Singapore
                                 </p>
                             </span>
-                            <p className="p-first-view__information js-slide-up-row">
-                                I&apos;m a sophomore student pursuing a diploma
-                                in Information Technology with specialism in
-                                Software Engineering. I aim to create
-                                cutting-edge enterprise solutions that are
-                                reliable and user-friendly.
-                            </p>
+                            <p className="p-first-view__information js-slide-up-row"></p>
                         </div>
                     </section>
                     <section className="p-home-about l-home__about">
@@ -61,7 +49,7 @@ export default function Home({ works }: Props) {
                             data-scroll-speed="-0.7"
                             data-scroll-direction="horizontal"
                         >
-                            Developer
+                            Software Engineer
                         </h2>
                         <div className="p-home-about__profile">
                             <h3 className="p-home-about__name">
@@ -72,10 +60,11 @@ export default function Home({ works }: Props) {
                             <p className="p-home-about__text">
                                 Born in 2004, Nueva Ecija, Philippines.
                                 <br />
-                                Self-taught in markup, front-end frameworks, and
-                                web design as a student. I enjoy exploring my
-                                capabalities as a software engineer through
-                                creating projects.
+                                I&apos;m a sophomore Computer Science student
+                                pursuing a career in software engineering. I
+                                create cutting-edge websites and applications
+                                with a focus on performance and accessibility,
+                                while maintaining a strong emphasis on design.
                             </p>
                             <div className="p-home-about__link-wrapper">
                                 <a href="/about" className="c-button-primary">
@@ -127,14 +116,14 @@ export default function Home({ works }: Props) {
                 <a
                     href="/about/"
                     className="p-contact-connect"
-                    style={{ transform: "translate(0px, 0px)", zIndex: 20 }}
+                    style={{ transform: "translate(0px, 0px)" }}
                 >
                     <p className="p-contact-connect__text-wrapper">
                         <span
                             className="p-contact-connect__text"
-                            data-text="About"
+                            data-text="About Me"
                         >
-                            About
+                            About Me
                         </span>
                     </p>
                 </a>
@@ -142,14 +131,3 @@ export default function Home({ works }: Props) {
         </>
     );
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
-    const res = await fetch("https://admin.seangjr.me/api/works");
-    const { docs } = await res.json();
-    const works: Work[] = docs;
-    return {
-        props: {
-            works: works,
-        },
-    };
-};

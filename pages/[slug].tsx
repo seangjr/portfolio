@@ -1,30 +1,27 @@
-import { GetServerSideProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useRef } from "react";
 
 import useBackground from "../components/hooks/useBackground";
-import type { Details } from "../components/types";
-
+import type { Work } from "../components/types";
+import { works } from "../components/data/works.json";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface Props {
-    details: Details;
+    work: Work;
 }
 
-const SingleWorkItem = ({ details }: Props) => {
+const SingleWorkItem = ({ work }: Props) => {
     const container = useRef<HTMLDivElement>(null);
     useBackground(container);
     return (
         <>
             <Head>
-                <title key={details.workdetails.classId}>
-                    {details.workdetails.title} | Sean Relampagos
-                </title>
+                <title key={work.classId}>{work.title} | Sean Relampagos</title>
             </Head>
             <main
                 className="l-single-works p-single-works"
-                data-bg={details.workdetails.dataBg}
+                data-bg={work.dataBg}
                 ref={container}
             >
                 <div className="l-container l-container--small">
@@ -39,12 +36,12 @@ const SingleWorkItem = ({ details }: Props) => {
                                     style={{ transform: "translate(0px, 0px)" }}
                                 >
                                     <span className="is-slide-up">
-                                        {details.workdetails.title}
+                                        {work.title}
                                     </span>
                                 </h1>
                                 <p className="p-single-works__category is-wrap">
                                     <span className="is-slide-up u-delay05">
-                                        {details.workdetails.category}
+                                        {work.category}
                                     </span>
                                 </p>
                             </div>
@@ -60,9 +57,9 @@ const SingleWorkItem = ({ details }: Props) => {
                                 data-scroll-delay="0.1"
                             >
                                 <Image
-                                    src={details.mockupImageSp.url}
+                                    src={work.details.mockupImageSp.url}
                                     className="p-single-works__mockup-img"
-                                    alt={details.mockupImageSp.url}
+                                    alt={work.details.mockupImageSp.url}
                                     width="140"
                                     height="282"
                                     decoding="async"
@@ -75,7 +72,7 @@ const SingleWorkItem = ({ details }: Props) => {
                                 data-scroll-speed="0.5"
                             >
                                 <Image
-                                    src={details.mockupImagePc.url}
+                                    src={work.details.mockupImagePc.url}
                                     alt=""
                                     className="p-single-works__mockup-img"
                                     width="1898"
@@ -91,7 +88,7 @@ const SingleWorkItem = ({ details }: Props) => {
                                 data-scroll-delay="0.05"
                             >
                                 <Image
-                                    src={details.mockupImageTab.url}
+                                    src={work.details.mockupImageTab.url}
                                     alt=""
                                     className="p-single-works__mockup-img"
                                     width={445}
@@ -116,7 +113,7 @@ const SingleWorkItem = ({ details }: Props) => {
                                             </dt>
                                             <dd className="p-works-overview__dd">
                                                 <a
-                                                    href={details.siteUrl}
+                                                    href={work.details.siteUrl}
                                                     className="p-works-overview__link"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
@@ -125,7 +122,7 @@ const SingleWorkItem = ({ details }: Props) => {
                                                             "translate(0px, 0px)",
                                                     }}
                                                 >
-                                                    {details.siteUrl}
+                                                    {work.details.siteUrl}
                                                     <FaExternalLinkAlt
                                                         className="c-svg p-works-overview__svg"
                                                         width={14}
@@ -141,7 +138,7 @@ const SingleWorkItem = ({ details }: Props) => {
                                             </dt>
                                             <dd className="p-works-overview__dd">
                                                 <a
-                                                    href={details.source}
+                                                    href={work.details.source}
                                                     className="p-works-overview__link"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
@@ -150,7 +147,7 @@ const SingleWorkItem = ({ details }: Props) => {
                                                             "translate(0px, 0px)",
                                                     }}
                                                 >
-                                                    {details.source}
+                                                    {work.details.source}
                                                     <FaExternalLinkAlt
                                                         className="c-svg p-works-overview__svg"
                                                         width={14}
@@ -169,7 +166,7 @@ const SingleWorkItem = ({ details }: Props) => {
                                 </h2>
                                 <div className="p-works-overview__body">
                                     <p className="p-works-overview__text">
-                                        {details.overview}
+                                        {work.details.overview}
                                     </p>
                                 </div>
                             </section>
@@ -180,7 +177,7 @@ const SingleWorkItem = ({ details }: Props) => {
                             style={{ transform: "translate(0px, 0px)" }}
                         >
                             <Image
-                                src={details.projectImageWide.url}
+                                src={work.details.projectImageWide.url}
                                 alt=""
                                 className="p-single-works__img"
                                 width={1920}
@@ -214,7 +211,7 @@ const SingleWorkItem = ({ details }: Props) => {
                                                     Role
                                                 </dt>
                                                 <dd className="p-works-detail__dd">
-                                                    {details.role}
+                                                    {work.details.role}
                                                 </dd>
                                             </div>
                                             <div className="p-works-detail__row">
@@ -223,9 +220,8 @@ const SingleWorkItem = ({ details }: Props) => {
                                                 </dt>
                                                 <dd className="p-works-detail__dd">
                                                     {
-                                                        details.productionDate.split(
-                                                            "T",
-                                                        )[0]
+                                                        work.details
+                                                            .productionDate
                                                     }
                                                 </dd>
                                             </div>
@@ -234,7 +230,10 @@ const SingleWorkItem = ({ details }: Props) => {
                                                     Production Duration
                                                 </dt>
                                                 <dd className="p-works-detail__dd">
-                                                    {details.productionDuration}
+                                                    {
+                                                        work.details
+                                                            .productionDuration
+                                                    }
                                                 </dd>
                                             </div>
                                             <div className="p-works-detail__row">
@@ -242,7 +241,7 @@ const SingleWorkItem = ({ details }: Props) => {
                                                     Languages
                                                 </dt>
                                                 <dd className="p-works-detail__dd">
-                                                    {details.languages}
+                                                    {work.details.languages}
                                                 </dd>
                                             </div>
                                             <div className="p-works-detail__row">
@@ -250,17 +249,7 @@ const SingleWorkItem = ({ details }: Props) => {
                                                     Tools
                                                 </dt>
                                                 <dd className="p-works-detail__dd">
-                                                    {details.tools}
-                                                </dd>
-                                            </div>
-                                            <div className="p-works-detail__row">
-                                                <dt className="p-works-detail__dt">
-                                                    Note:
-                                                </dt>
-                                                <dd className="p-works-detail__dd">
-                                                    It&apos;s random images for
-                                                    now because I haven&apos;t
-                                                    got the real designs yet.
+                                                    {work.details.tools}
                                                 </dd>
                                             </div>
                                         </dl>
@@ -272,9 +261,13 @@ const SingleWorkItem = ({ details }: Props) => {
                                     className="p-single-works__capture"
                                     style={{ transform: "translate(0px, 0px)" }}
                                 >
-                                    <img
-                                        src="https://picsum.photos/816/2592"
+                                    <Image
+                                        src={
+                                            work.details.projectDetailsImage.url
+                                        }
                                         alt=""
+                                        height={2592}
+                                        width={816}
                                         loading="lazy"
                                         className="p-single-works__capture-img"
                                     />
@@ -294,20 +287,16 @@ const SingleWorkItem = ({ details }: Props) => {
 
 export default SingleWorkItem;
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-    const res = await fetch("http://admin.seangjr.me/api/details");
-    const { docs } = await res.json();
-    const details = docs.find((doc: { workdetails: { slug: any } }) => {
-        return doc.workdetails.slug == params?.slug;
+export async function getStaticPaths() {
+    const paths = works.map((work) => {
+        const slug = work.slug;
+        return { params: { slug } };
     });
-    if (!details) {
-        return {
-            notFound: true,
-        };
-    }
-    return {
-        props: {
-            details,
-        },
-    };
-};
+    return { paths, fallback: true };
+}
+
+export async function getStaticProps({ params }: any) {
+    const slug = params.slug;
+    const work = works.find((work) => work.slug === slug);
+    return { props: { work } };
+}

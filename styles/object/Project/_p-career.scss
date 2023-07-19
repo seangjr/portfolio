@@ -205,3 +205,14 @@
         }
     }
 }
+
+.p-career__company {
+    @include global.fz(14, 16);
+    // text-decoration: underline;
+    color: global.$color-primary-thin;
+    font-weight: 400;
+    font-family: global.$font-family-en !important;
+    font-size: 0.95rem !important;
+    text-align: justify;
+    letter-spacing: 0.001rem;
+}

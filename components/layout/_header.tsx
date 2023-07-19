@@ -1,6 +1,5 @@
 import { useRef, RefObject, useEffect } from "react";
-import { FaTwitter, FaGithub } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
+import { FaTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
 import useDrawer, { removeEvent, toggleDrawer } from "../hooks/useDrawer";
 
@@ -83,7 +82,7 @@ const Header = () => {
                             <span className="p-header__logo-text">SEAN</span>
                             <span className="p-header__logo-change">
                                 <span className="p-header__logo-head">
-                                    &copy;2022
+                                    &copy;{new Date().getFullYear()}
                                 </span>
                                 <span className="p-header__logo-foot">
                                     Relampagos
@@ -143,15 +142,15 @@ const Header = () => {
                             </li>
                             <li className="p-header-sns__item">
                                 <a
-                                    href="https://instagram.com/sgjrcreative"
+                                    href="https://linkedin.com/in/sean-relampagos"
                                     className="p-header-sns__link"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
                                     <span className="u-visually-hidden">
-                                        Instagram
+                                        LinkedIn
                                     </span>
-                                    <AiFillInstagram
+                                    <FaLinkedinIn
                                         size={20}
                                         className="c-svg p-header-sns__svg"
                                     />
@@ -297,15 +296,15 @@ const Header = () => {
                         </li>
                         <li className="p-sns__item">
                             <a
-                                href="https://instagram.com/seangjr_"
+                                href="https://linkedin.com/in/sean-relampagos"
                                 className="p-sns__link"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 <span className="u-visually-hidden">
-                                    Instagram
+                                    LinkedIn
                                 </span>
-                                <AiFillInstagram
+                                <FaLinkedinIn
                                     size={20}
                                     className="c-svg p-sns__svg"
                                 />

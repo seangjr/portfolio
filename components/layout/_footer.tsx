@@ -1,5 +1,4 @@
-import { FaTwitter, FaGithub } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
+import { FaTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Image from "next/image";
 
 // Image import
@@ -8,7 +7,11 @@ import footerImage from "../../public/img/footer_img.jpg";
 const Footer = () => {
     const year = new Date().getFullYear();
     return (
-        <footer className="p-footer l-footer" data-scroll data-scroll-speed="1">
+        <footer
+            className="p-footer l-footer"
+            data-scroll
+            data-scroll-speed="-5"
+        >
             <div className="l-footer__inner">
                 <div className="p-footer__contents">
                     <div className="p-footer__head p-footer-head">
@@ -61,15 +64,15 @@ const Footer = () => {
                                 </li>
                                 <li className="p-sns__item">
                                     <a
-                                        href="https://instagram.com/seangjr_"
+                                        href="https://linkedin.com/in/sean-relampagos"
                                         className="p-sns__link"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
                                         <span className="u-visually-hidden">
-                                            Instagram
+                                            LinkedIn
                                         </span>
-                                        <AiFillInstagram
+                                        <FaLinkedinIn
                                             size={20}
                                             className="c-svg p-sns__svg"
                                         />

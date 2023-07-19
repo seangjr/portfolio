@@ -12,21 +12,19 @@ export type Work = {
     category: string;
     dataBg: string;
     thumbnail: Image;
+    details: {
+        siteUrl: string,
+        source: string,
+        overview: string,
+        mockupImageSp: Image,
+        mockupImagePc: Image,
+        mockupImageTab: Image,
+        projectImageWide: Image,
+        projectDetailsImage: Image,
+        role: string,
+        productionDate: string,
+        productionDuration: string,
+        languages: string,
+        tools: string,
+    }
 };
-
-export type Details = {
-    workdetails: Work,
-    siteUrl: string,
-    source: string,
-    overview: string,
-    mockupImageSp: Image,
-    mockupImagePc: Image,
-    mockupImageTab: Image,
-    projectImageWide: Image,
-    projectDetailsImage: Image,
-    role: string,
-    productionDate: string,
-    productionDuration: string,
-    languages: string,
-    tools: string,
-}
