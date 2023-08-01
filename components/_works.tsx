@@ -1,10 +1,6 @@
 import Link from "next/link";
-import type { Work } from "./types";
 import Image from "next/image";
-interface Props {
-    work: Work;
-}
-export const WorkDetails = ({ work }: Props) => {
+export const WorkDetails = ({ work }: any) => {
     return (
         <li
             data-id={work.dataId}
@@ -52,7 +48,7 @@ export const WorkDetails = ({ work }: Props) => {
     );
 };
 
-export const WorkImage = ({ work }: Props) => {
+export const WorkImage = ({ work }: any) => {
     return (
         <Link
             id={work.classId}
