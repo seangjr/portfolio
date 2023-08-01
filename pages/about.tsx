@@ -1,3 +1,5 @@
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import { useRef } from "react";
 // Icons
 import { AiFillInstagram } from "react-icons/ai";
 import { FaTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa";
@@ -6,17 +8,30 @@ import Image from "next/image";
 
 // Image import
 import profileImage from "../public/img/profile.jpg";
+import Link from "next/link";
+import Header from "../components/layout/_header";
+import Footer from "../components/layout/_footer";
+import Transition from "../components/transition";
 const About = () => {
+    const containerRef = useRef(null);
     return (
-        <>
+        <LocomotiveScrollProvider
+            options={{
+                smooth: true,
+                lerp: 0.075,
+            }}
+            watch={[]}
+            containerRef={containerRef}
+        >
             <Head>
                 <title>ABOUT | Sean Relampagos</title>
             </Head>
             <main
                 className="l-lower-about"
-                data-barba="container"
-                data-barba-namespace="about"
+                ref={containerRef}
+                data-scroll-container
             >
+                <Header />
                 <div className="l-container">
                     <section id="js-first-view" className="p-lower-first-view">
                         <div className="p-lower-first-view__inner">
@@ -334,7 +349,7 @@ const About = () => {
                                 <div className="p-career__row">
                                     <dt className="p-career__date">2021</dt>
                                     <p className="p-career__company">
-                                        Interseed
+                                        Interseed ・ Internship
                                     </p>
                                     <dt className="p-career__dt">
                                         Frontend Developer Intern
@@ -411,7 +426,7 @@ const About = () => {
                                 <div className="p-career__row">
                                     <dt className="p-career__date">Present</dt>
                                     <p className="p-career__company">
-                                        Base Two
+                                        Base Two ・ Internship
                                     </p>
                                     <dt className="p-career__dt">
                                         Web Developer Intern
@@ -446,11 +461,22 @@ const About = () => {
                                         <b>JWT</b> and <b>OAuth</b>.
                                     </dd>
                                     <p className="p-career__company">
-                                        Base Two ・ Part-time
+                                        Base Two ・ Part-time ・ Freelance
                                     </p>
                                     <dt className="p-career__dt">
                                         Frontend Engineer
                                     </dt>
+                                    <dd className="p-career__dd">
+                                        ・ Led front-end development efforts for
+                                        the company&apos;s past and current projects, taking
+                                        charge of its design and implementation.
+                                        <br />
+                                        ・ Optimized past projects by refactoring the codebase and
+                                        implementing new features.
+                                        <br />
+                                        ・ Maintained and improved projects by fixing bugs and communicating with
+                                        clients to ensure that the project is aligned with their vision.
+                                    </dd>
                                 </div>
                                 <div className="p-career__row">
                                     <dt className="p-career__date">20XX</dt>
@@ -527,7 +553,7 @@ const About = () => {
                         </div>
                     </section>
                 </div>
-                <a
+                <Link
                     href="/contact/"
                     className="p-contact-connect"
                     style={{ transform: "translate(0px, 0px)", zIndex: 20 }}
@@ -540,10 +566,11 @@ const About = () => {
                             Contact
                         </span>
                     </p>
-                </a>
+                </Link>
+                <Footer />
             </main>
-        </>
+        </LocomotiveScrollProvider>
     );
 };
 
-export default About;
+export default Transition(About);

@@ -1,11 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRef } from "react";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 import useBackground from "../components/hooks/useBackground";
 import type { Work } from "../components/types";
 import { works } from "../components/data/works.json";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Transition from "../components/transition";
+import Header from "../components/layout/_header";
 
 interface Props {
     work: Work;
@@ -15,7 +18,14 @@ const SingleWorkItem = ({ work }: Props) => {
     const container = useRef<HTMLDivElement>(null);
     useBackground(container);
     return (
-        <>
+        <LocomotiveScrollProvider
+            options={{
+                smooth: true,
+                lerp: 0.075,
+            }}
+            watch={[]}
+            containerRef={container}
+        >
             <Head>
                 <title key={work.classId}>{work.title} | Sean Relampagos</title>
             </Head>
@@ -23,7 +33,9 @@ const SingleWorkItem = ({ work }: Props) => {
                 className="l-single-works p-single-works"
                 data-bg={work.dataBg}
                 ref={container}
+                data-scroll-container
             >
+                <Header />
                 <div className="l-container l-container--small">
                     <div id="js-switching-trigger">
                         <div
@@ -281,7 +293,7 @@ const SingleWorkItem = ({ work }: Props) => {
                     </div>
                 </div>
             </main>
-        </>
+        </LocomotiveScrollProvider>
     );
 };
 

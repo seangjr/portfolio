@@ -1,15 +1,30 @@
 import Head from "next/head";
+import { useRef } from "react";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import Header from "../components/layout/_header";
+import Link from "next/link";
+import Footer from "../components/layout/_footer";
+import Transition from "../components/transition";
 const Success = () => {
+    const containerRef = useRef(null);
     return (
-        <>
+        <LocomotiveScrollProvider
+            options={{  
+                smooth: true,
+                lerp: 0.075,
+            }}
+            watch={[]}
+            containerRef={containerRef} 
+        >
             <Head>
                 <title>SUCCESS | Sean Relampagos</title>
             </Head>
             <main
                 className="p-contact"
-                data-barba="container"
-                data-barba-namespace="contact"
+                ref={containerRef}
+                data-scroll-container
             >
+                <Header />
                 <div className="l-container">
                     <div id="js-first-view" className="p-contact__thanks-fv">
                         <h1 className="c-page-heading">
@@ -83,7 +98,7 @@ const Success = () => {
                         </section>
                     </div>
                 </div>
-                <a
+                <Link
                     href="/"
                     className="p-contact-connect"
                     style={{ transform: "translate(0px, 0px)" }}
@@ -96,10 +111,11 @@ const Success = () => {
                             Home
                         </span>
                     </p>
-                </a>
+                </Link>
+                <Footer />
             </main>
-        </>
+        </LocomotiveScrollProvider>
     );
 };
 
-export default Success;
+export default Transition(Success)

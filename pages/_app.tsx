@@ -1,8 +1,7 @@
-import Layout from "../components/layout/main";
-
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion"
 
 import "../styles/styles.scss";
 
@@ -56,9 +55,9 @@ export default function App({ Component, pageProps }: AppProps) {
                 <link rel="manifest" href="/manifest.json" />
                 <link rel="apple-touch-icon" href="/favicon.png" />
             </Head>
-            <Layout>
+            <AnimatePresence mode="wait" initial={false}>
                 <Component {...pageProps} />
-            </Layout>
+            </AnimatePresence>
         </>
     );
 }

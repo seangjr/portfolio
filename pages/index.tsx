@@ -1,16 +1,30 @@
 import Head from "next/head";
-
+import Header from "../components/layout/_header";
 import { WorkDetails, WorkImage } from "../components/_works";
-import type { Work } from "../components/types";
 import { works } from "../components/data/works.json";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import { useRef } from "react";
+import Link from "next/link";
+import Footer from "../components/layout/_footer";
+import Transition from "../components/transition";
 
-export default function Home() {
+function Home() {
+    const containerRef = useRef(null);
     return (
-        <>
+        <LocomotiveScrollProvider
+            options={{
+                smooth: true,
+                lerp: 0.075,
+            }}
+            watch={[]}
+            containerRef={containerRef}
+        >
             <Head>
                 <title>Sean Relampagos</title>
             </Head>
-            <div className="l-home" data-barba-namespace="home">
+            <main ref={containerRef} data-scroll-container>
+            <Header />
+            <div className="l-home">
                 <div className="l-container">
                     <section
                         id="js-first-view"
@@ -67,7 +81,7 @@ export default function Home() {
                                 while maintaining a strong emphasis on design.
                             </p>
                             <div className="p-home-about__link-wrapper">
-                                <a href="/about" className="c-button-primary">
+                                <Link href="/about" className="c-button-primary">
                                     <span className="c-button-primary__text">
                                         <span
                                             className="c-button-primary__text-inner"
@@ -77,7 +91,7 @@ export default function Home() {
                                         </span>
                                     </span>
                                     <span className="c-button-primary__line"></span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </section>
@@ -113,7 +127,7 @@ export default function Home() {
                         </div>
                     </section>
                 </div>
-                <a
+                <Link
                     href="/about/"
                     className="p-contact-connect"
                     style={{ transform: "translate(0px, 0px)" }}
@@ -126,8 +140,12 @@ export default function Home() {
                             About Me
                         </span>
                     </p>
-                </a>
+                </Link>
             </div>
-        </>
+            <Footer />
+            </main>
+        </LocomotiveScrollProvider>
     );
 }
+
+export default Transition(Home);

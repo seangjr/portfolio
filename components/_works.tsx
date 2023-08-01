@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Work } from "./types";
 import Image from "next/image";
 interface Props {
@@ -26,7 +27,7 @@ export const WorkDetails = ({ work }: Props) => {
                     {work.description}
                 </p>
                 <div className="p-works-content__link-wrapper is-slide-mask">
-                    <a
+                    <Link
                         href={`/${work.slug}`}
                         className="c-button-primary c-button-primary--large"
                     >
@@ -39,7 +40,7 @@ export const WorkDetails = ({ work }: Props) => {
                             </span>
                         </span>
                         <span className="c-button-primary__line"></span>
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="p-works-content__scope-wrapper">
@@ -53,7 +54,7 @@ export const WorkDetails = ({ work }: Props) => {
 
 export const WorkImage = ({ work }: Props) => {
     return (
-        <a
+        <Link
             id={work.classId}
             href={`/${work.slug}`}
             className="p-works__item p-works-item js-follow-targets"
@@ -72,6 +73,6 @@ export const WorkImage = ({ work }: Props) => {
                 <h3 className="p-works-item__title">{work.title}</h3>
                 <p className="p-works-item__category">{work.category}</p>
             </div>
-        </a>
+        </Link>
     );
 };

@@ -1,15 +1,30 @@
 import Head from "next/head";
+import { useRef } from "react";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import Header from "../components/layout/_header";
+import Footer from "../components/layout/_footer";
+import Link from "next/link";
+import Transition from "../components/transition";
 const Contact = () => {
+    const containerRef = useRef(null)
     return (
-        <>
+        <LocomotiveScrollProvider
+            options={{
+                smooth: true,
+                lerp: 0.075,
+            }}
+            watch={[]}
+            containerRef={containerRef}
+        >
             <Head>
                 <title>CONTACT | Sean Relampagos</title>
             </Head>
             <main
                 className="p-contact"
-                data-barba="container"
-                data-barba-namespace="contact"
+                data-scroll-container
+                ref={containerRef}
             >
+                <Header />
                 <div className="l-container">
                     <div
                         id="js-first-view"
@@ -133,7 +148,7 @@ const Contact = () => {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    sean@relampagos.org
+                                                    contact@seangjr.tech
                                                 </a>
                                             </li>
                                         </ul>
@@ -287,7 +302,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                <a
+                <Link
                     href="/"
                     className="p-contact-connect"
                     style={{ transform: "translate(0px, 0px)" }}
@@ -300,16 +315,17 @@ const Contact = () => {
                             Home
                         </span>
                     </p>
-                </a>
+                </Link>
                 <iframe
                     name="hidden_iframe"
                     id="hidden_iframe"
                     style={{ display: "none" }}
                     title="hidden_iframe"
                 ></iframe>
+                <Footer />
             </main>
-        </>
+        </LocomotiveScrollProvider>
     );
 };
 
-export default Contact;
+export default Transition(Contact);

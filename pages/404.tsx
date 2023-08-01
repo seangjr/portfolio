@@ -1,6 +1,22 @@
+import { useRef } from "react";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import Header from "../components/layout/_header";
+import Footer from "../components/layout/_footer";
+import Link from "next/link";
+import Transition from "../components/transition";
 const Page404 = () => {
+    const containerRef = useRef(null)
     return (
-        <main className="p-contact">
+        <LocomotiveScrollProvider
+            options={{
+                smooth: true,
+                lerp: 0.075,
+            }} 
+            watch={[]}
+            containerRef={containerRef}
+        >
+        <main className="p-contact" ref={containerRef} data-scroll-container>
+            <Header />
             <div className="l-container">
                 <div id="js-first-view" className="p-contact__thanks-fv">
                     <h1 className="c-page-heading">
@@ -70,7 +86,7 @@ const Page404 = () => {
                     </section>
                 </div>
             </div>
-            <a
+            <Link
                 href="/"
                 className="p-contact-connect"
                 style={{ transform: "translate(0px, 0px)" }}
@@ -80,9 +96,11 @@ const Page404 = () => {
                         Home
                     </span>
                 </p>
-            </a>
+            </Link>
+            <Footer />
         </main>
+        </LocomotiveScrollProvider>
     );
 };
 
-export default Page404;
+export default Transition(Page404);

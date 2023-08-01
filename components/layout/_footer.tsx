@@ -3,6 +3,7 @@ import Image from "next/image";
 
 // Image import
 import footerImage from "../../public/img/footer_img.jpg";
+import Link from "next/link";
 
 const Footer = () => {
     const year = new Date().getFullYear();
@@ -10,12 +11,11 @@ const Footer = () => {
         <footer
             className="p-footer l-footer"
             data-scroll
-            data-scroll-speed="-5"
         >
             <div className="l-footer__inner">
                 <div className="p-footer__contents">
                     <div className="p-footer__head p-footer-head">
-                        <a href="/contact/" className="p-footer-head__link">
+                        <Link href="/contact/" className="p-footer-head__link">
                             <div className="p-footer-head__heading">
                                 <span className="p-footer-head__heading-text">
                                     <picture className="p-footer-head__picture">
@@ -39,7 +39,7 @@ const Footer = () => {
                                     together<span data-text="→">.</span>
                                 </span>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                     <div className="p-footer__foot p-footer-foot">
                         <div className="p-footer-foot__left">
@@ -100,30 +100,30 @@ const Footer = () => {
                         </div>
                         <ul className="p-footer-foot__nav">
                             <li className="p-footer-foot__nav-item">
-                                <a
+                                <Link
                                     href="/about/"
                                     className="p-footer-foot__nav-link"
                                 >
                                     ABOUT
-                                </a>
+                                </Link>
                             </li>
                             <li className="p-footer-foot__nav-item">
-                                <a
+                                <Link
                                     href="/contact/"
                                     className="p-footer-foot__nav-link"
                                 >
                                     CONTACT
-                                </a>
+                                </Link>
                             </li>
                             <li className="p-footer-foot__nav-item">
-                                <a
+                                <Link
                                     href="https://youtu.be/dQw4w9WgXcQ"
                                     className="p-footer-foot__nav-link p-footer-foot__nav-link--blank"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
                                     BLOG
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

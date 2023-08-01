@@ -198,7 +198,7 @@ const Header = () => {
                 <div className="p-drawer-nav__inner">
                     <ul className="p-drawer-nav__list">
                         <li className="p-drawer-nav__item">
-                            <a
+                            <Link
                                 className="p-drawer-nav__link"
                                 href="/about/"
                                 onClick={(): void =>
@@ -206,10 +206,10 @@ const Header = () => {
                                 }
                             >
                                 ABOUT ME
-                            </a>
+                            </Link>
                         </li>
                         <li className="p-drawer-nav__item">
-                            <a
+                            <Link
                                 href="/contact/"
                                 className="p-drawer-nav__link"
                                 onClick={(): void =>
@@ -217,7 +217,7 @@ const Header = () => {
                                 }
                             >
                                 CONTACT
-                            </a>
+                            </Link>
                         </li>
                         <li className="p-drawer-nav__item">
                             <a
